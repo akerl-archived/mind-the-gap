@@ -5,6 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 [[ "$#" != '1' ]] && echo "Usage: $0 BLOCK_DEV" && exit 1
+BLOCK_DEV="$1"
 
 TMP_DIR="$(mktemp -d)"
 REPO_HOST='rsync://ru.mirror.archlinuxarm.org/archlinuxarm/armv6h'
