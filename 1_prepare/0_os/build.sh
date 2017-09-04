@@ -33,7 +33,7 @@ mount "${BLOCK_DEV}1" "${TMP_DIR}"/boot
 mount "${BLOCK_DEV}2" "${TMP_DIR}"/root
 
 bsdtar -xpf "${OS_FILE}" -C "${TMP_DIR}"/root
-sync
+sync "${TMP_DIR}"/root/boot
 mv "${TMP_DIR}"/root/boot/* "${TMP_DIR}"/boot/
 
 
