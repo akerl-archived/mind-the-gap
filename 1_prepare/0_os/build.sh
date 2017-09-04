@@ -26,7 +26,7 @@ gpgv --keyring ./archlinuxarm.keyring "${OS_SIG_FILE}" "${OS_FILE}" || (
 
 sfdisk "${BLOCK_DEV}" < disk_layout
 mkfs.vfat "${BLOCK_DEV}1"
-mkfs.ext4 "${BLOCK_DEV}2"
+mkfs.ext4 -F "${BLOCK_DEV}2"
 
 mkdir "${TMP_DIR}"/{boot,root}
 mount "${BLOCK_DEV}1" "${TMP_DIR}"/boot
