@@ -39,6 +39,8 @@ mv "${TMP_DIR}"/root/boot/* "${TMP_DIR}"/boot/
 sed -i 's/^SigLevel.*/SigLevel = Required DatabaseOptional/' "${TMP_DIR}"/root/etc/pacman.conf
 echo 'Server = file:///opt/share/repo/armv6h/$repo' > "${TMP_DIR}"/root/etc/pacman.d/mirrorlist
 rm "${TMP_DIR}"/root/etc/systemd/system/multi-user.target.wants/haveged.service
+mkdir -p "${TMP_DIR}"/root/opt/share
+cp ./archlinuxarm.keyring "${TMP_DIR}"/root/root/
 
 umount "${TMP_DIR}"/root "${TMP_DIR}"/boot
 
