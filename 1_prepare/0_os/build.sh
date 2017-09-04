@@ -36,7 +36,8 @@ bsdtar -xpf "${OS_FILE}" -C "${TMP_DIR}"/root
 sync "${TMP_DIR}"/root/boot
 mv "${TMP_DIR}"/root/boot/* "${TMP_DIR}"/boot/
 
+sed -i 's/^SigLevel.*/SigLevel = Required DatabaseOptional/' "${TMP_DIR}"/root/etc/pacman.conf
+echo 'Server = file:///opt/share/repo/armv6h/$repo' > "${TMP_DIR}"/root/etc/pacman.d/mirrorlist
 
-
-#umount "${TMP_DIR}"/root "${TMP_DIR}"/boot
+umount "${TMP_DIR}"/root "${TMP_DIR}"/boot
 
