@@ -15,9 +15,12 @@ TMP_DIR="$(mktemp -d)"
 OS_HOST='http://os.archlinuxarm.org/os'
 OS_URL="${OS_HOST}/ArchLinuxARM-rpi-latest.tar.gz"
 OS_FILE="${TMP_DIR}/os.tgz"
+OS_SIG_URL="${OS_URL}.sig"
+OS_SIG_FILE="${OS_FILE}.sig"
 
 curl -Lo "${OS_FILE}" "${OS_URL}"
-gpgv --keyring ./archlinuxarm.keyring "${OS_FILE}" || (
+curl -Lo "${OS_SIG_FILE}" "${OS_SIG_URL}"
+gpgv --keyring ./archlinuxarm.keyring "${OS_SIG_FILE}" "${OS_FILE}" || (
     echo 'Bad signature!' && exit 1
 )
 
