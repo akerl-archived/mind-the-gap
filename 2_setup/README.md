@@ -1,7 +1,7 @@
-mind-the-gap / prepare
+mind-the-gap / setup
 ======================
 
-This section details setting up the hardware. Should be very possible to do these concurrently.
+This section describes how to configure the newly prepared system. Step 1 should be to insert the SD card from the previous step and plug in the USB hub, external drive, flash drive, keyboard, and monitor.
 
-0. os disk
-1. share disk
+0. Bootstrapping
+1. Packages
