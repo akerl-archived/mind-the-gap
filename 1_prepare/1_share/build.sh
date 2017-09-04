@@ -24,4 +24,6 @@ mount "${BLOCK_DEV}2" "${TMP_DIR}"/fat
 
 rsync --progress -avx "${REPO_HOST}" "${TMP_DIR}"/repo/
 
-#umount "${TMP_DIR}"/repo "${TMP_DIR}"/fat
+git clone git://github.com/akerl/mind-the-gap "${TMP_DIR}"/config
+
+umount "${TMP_DIR}"/repo "${TMP_DIR}"/fat
