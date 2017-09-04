@@ -16,7 +16,7 @@ OS_HOST='http://os.archlinuxarm.org/os'
 OS_URL="${OS_HOST}/ArchLinuxARM-rpi-latest.tar.gz"
 OS_FILE="${TMP_DIR}/os.tgz"
 
-curl -o "${OS_FILE}" "${OS_URL}"
+curl -Lo "${OS_FILE}" "${OS_URL}"
 gpgv --keyring ./archlinuxarm.keyring "${OS_FILE}" || (
     echo 'Bad signature!' && exit 1
 )
