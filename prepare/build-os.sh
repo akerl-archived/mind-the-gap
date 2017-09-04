@@ -4,9 +4,9 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-BLOCK_DEV="$1"
-[[ -z "$BLOCK_DEV" ]] && echo 'No block device given' && exit 1
+[[ "$#" != '1' ]] && echo "Usage: $0 BLOCK_DEV" && exit 1
 
+BLOCK_DEV="$1"
 echo "Press enter to continue with $BLOCK_DEV"
 read
 
