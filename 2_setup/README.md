@@ -6,3 +6,4 @@ This section describes how to configure the newly prepared system. Step 1 should
 0. Bootstrapping
 1. Packages
 2. Disks
+3. Shell

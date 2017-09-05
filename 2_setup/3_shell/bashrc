@@ -1,0 +1,7 @@
+GPG_TTY="$(tty)"
+[[ -f ~/.vault_uuid ]] && source ~/.vault_uuid
+
+function vault_mount() {
+    cryptsetup luksOpen "/dev/disk/by-uuid/$VAULT_UUID" vault
+    mount /opt/vault
+}
