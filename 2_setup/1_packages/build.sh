@@ -54,7 +54,7 @@ userdel alarm
 rm -rf /home/alarm
 
 # Remove unnecessary packages
-pacman -R --noconfirm crda dhcpcd dialog haveged inetutils iputils iw jfsutils logrotate nano net-tools netctl openresolv openssh pciutils reiserfsprogs s-nail wireless-regdb wireless_tools wpa_supplicant xfsprofs ca-certificates ca-certificates-cacert ca-certificates-mozilla ldns libedit
+pacman -R --noconfirm crda dhcpcd dialog haveged inetutils iputils iw jfsutils logrotate nano net-tools netctl openresolv openssh pciutils reiserfsprogs s-nail wireless-regdb wireless_tools wpa_supplicant xfsprogs ca-certificates ca-certificates-cacert ca-certificates-mozilla ldns libedit
 
 # Install necessary packages
 pacman -S --noconfirm vim-minimal
