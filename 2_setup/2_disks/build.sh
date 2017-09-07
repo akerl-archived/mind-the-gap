@@ -30,11 +30,14 @@ stty_orig="$(stty -g)"
 stty -echo
 read LUKS_PW
 stty "$stty_orig"
+echo
 echo -n "Enter it again: "
 stty_orig="$(stty -g)"
 stty -echo
 read LUKS_PW2
 stty "$stty_orig"
+echo
+echo "Thanks!"
 
 if [[ "$LUKS_PW" != "$LUKS_PW2" ]] ; then
     echo "Passphrase mismatch"
