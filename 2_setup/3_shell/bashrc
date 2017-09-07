@@ -1,4 +1,4 @@
-GPG_TTY="$(tty)"
+export GPG_TTY="$(tty)"
 [[ -f ~/.vault_uuid ]] && source ~/.vault_uuid
 
 function vault_mount() {
