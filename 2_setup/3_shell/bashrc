@@ -1,3 +1,4 @@
+export GNUPGHOME=/opt/gnupg
 export GPG_TTY="$(tty)"
 [[ -f ~/.vault_uuid ]] && source ~/.vault_uuid
 
