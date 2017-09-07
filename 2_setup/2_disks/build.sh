@@ -55,7 +55,8 @@ echo "/dev/mapper/vault /opt/vault ext4 nosuid,nodev,noexec,noauto,rw 0 0" >> /e
 mkdir -p /opt/gnupg
 echo "tmpfs /opt/gnupg tmpfs rw,nosuid,noexec,nodev,size=10M,mode=0700 0 0" >> /etc/fstab
 
-# Mount all the default drives
+# Mount all the drives
 
 mount -a
+mount /opt/vault
 
