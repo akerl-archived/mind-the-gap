@@ -7,6 +7,7 @@ Here's the list of core components I used:
 
 * Raspberry Pi Model A+
     * Selected because it lacks Ethernet/Wifi/Bluetooth, but has builtin full size HDMI/USB ports, unlike the Pi Zero
+* DS3231 RTC
 * MicroSD card, large enough to be the base system. I'd recommend at least 16GB, because it would be annoying to migrate later
 * 7 port powered USB hub
     * Important that you have enough ports, and that you can feed them power, since the Pi's own USB port is relatively weak
@@ -23,6 +24,7 @@ And then some ancillary pieces:
 * HDMI monitor
 * Another computer to use to set up the environment
 * Enough cables to hook all of this stuff together
+* Soldering kit / wires to hook up RTC and RaspberryPi
 
 Other components I bought but that aren't required:
 

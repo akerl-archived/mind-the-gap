@@ -41,5 +41,11 @@ echo 'Server = file:///opt/share/repo/armv6h/$repo' > "${TMP_DIR}"/root/etc/pacm
 rm "${TMP_DIR}"/root/etc/systemd/system/multi-user.target.wants/haveged.service
 mkdir -p "${TMP_DIR}"/root/opt/share
 
+cat >> "${TMP_DIR}"/boot/config.txt <<EOF
+dtparam=i2c1=on
+dtparam=i2c_arm=on
+dtoverlay=i2c-rtc,ds3231
+EOF
+
 umount "${TMP_DIR}"/root "${TMP_DIR}"/boot
 

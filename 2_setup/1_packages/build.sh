@@ -33,7 +33,12 @@ svc-enable rngd
 
 # Set up the clock
 svc-disable systemd-timesyncd
-# Once there's an RTC, time selection will go here
+echo "Enter the current date/time:"
+echo "Format: yyyy-MM-dd hh:mm:ss"
+echo -n "      > "
+read NEW_TIME
+timedatectl set-time "$NEW_TIME"
+hwclock --systohc
 
 # Disable the network
 svc-disable systemd-networkd
