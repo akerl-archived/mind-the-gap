@@ -39,6 +39,18 @@ echo -n "      > "
 read NEW_TIME
 timedatectl set-time "$NEW_TIME"
 hwclock --systohc
+cat > /etc/systemd/system/hwclock.service <<EOF
+[Unit]
+Description=hwclock sync
+After=systemd-modules-load.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/hwclock --hctosys
+EOF
+ln -sfv /etc/systemd/system/hwclock.service /etc/systemd/system/multi-user.target.wants/hwclock.service
+systemctl daemon-reload
+systemctl start hwclock
 
 # Disable the network
 svc-disable systemd-networkd
