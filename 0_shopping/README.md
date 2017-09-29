@@ -31,4 +31,4 @@ Other components I bought but that aren't required:
 * Pelican 1120 case to put everything in
 * Command Strips and Duct Tape to hook everything into the case
 * Faraday sheet material to wrap the case in
-
+* HDMI 7" display that fit into the lid of the pelican case
