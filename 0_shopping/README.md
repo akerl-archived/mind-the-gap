@@ -7,7 +7,7 @@ Here's the list of core components I used:
 
 * Raspberry Pi Model A+
     * Selected because it lacks Ethernet/Wifi/Bluetooth, but has builtin full size HDMI/USB ports, unlike the Pi Zero
-* DS3231 RTC
+* DS3231 RTC (not necessarily required, but without it, the system clock won't survive powering down the device
 * MicroSD card, large enough to be the base system. I'd recommend at least 16GB, because it would be annoying to migrate later
 * 7 port powered USB hub
     * Important that you have enough ports, and that you can feed them power, since the Pi's own USB port is relatively weak
@@ -16,7 +16,8 @@ Here's the list of core components I used:
     * Needs to be able to hold an ArchLinux ARM repo (~20GB) plus anything else that needs to move between the airgapped system and other systems
 * USB thumb drive
     * This one is gonna get full-disk-encryption and be used to hold secret keys, so it doesn't need to be big but it does need to be separate from the aforementioned external drive
-* Yubikey 4 (or 4C, if you have a USB-C device)
+* Yubikey 4 for use as the HSM to store private keys
+* Additional Yubikeys for your other devices, to hold subkeys
 
 And then some ancillary pieces:
 
