@@ -8,3 +8,4 @@ The various sections are sorted into subdirs and are expected to be followed rou
 0. Shopping
 1. Prepare
 2. Setup
+3. Yubikey
