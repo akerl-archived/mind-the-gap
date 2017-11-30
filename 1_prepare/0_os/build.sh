@@ -45,6 +45,7 @@ cat >> "${TMP_DIR}"/boot/config.txt <<EOF
 dtparam=i2c1=on
 dtparam=i2c_arm=on
 dtoverlay=i2c-rtc,ds3231
+display_rotate=2
 EOF
 
 umount "${TMP_DIR}"/root "${TMP_DIR}"/boot

@@ -50,7 +50,6 @@ ExecStart=/usr/bin/hwclock --hctosys
 EOF
 ln -sfv /etc/systemd/system/hwclock.service /etc/systemd/system/multi-user.target.wants/hwclock.service
 systemctl daemon-reload
-systemctl start hwclock
 
 # Disable the network
 svc-disable systemd-networkd
