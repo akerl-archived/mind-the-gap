@@ -39,10 +39,13 @@ echo -n "      > "
 read NEW_TIME
 timedatectl set-time "$NEW_TIME"
 hwclock --systohc
+echo 'SUBSYSTEM=="rtc", KERNEL=="rtc0", TAG+="systemd"' > /etc/udev/rules.d/55-i2c-rtc.rules
 cat > /etc/systemd/system/hwclock.service <<EOF
 [Unit]
 Description=hwclock sync
 After=systemd-modules-load.service
+After=dev-rtc.device
+Wants=dev-rtc.device
 
 [Service]
 Type=oneshot
